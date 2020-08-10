@@ -24,7 +24,13 @@ public abstract class Human {
 	public Human(double height,double weight,String name){
 		this.height = height;
 		this.weight = weight;
-		this.name = name;
+		// 名前が空文字なら、名無しさんにする
+		// このようにメンバの設定に制限を掛けることができるのは、カプセル化の恩恵
+		if(name.equals("")){
+			this.name = "名無し";
+		}else{
+			this.name = name;
+		}
 	}
 
 	// 要素1：カプセル化・隠蔽
@@ -68,7 +74,12 @@ public abstract class Human {
 	 * @param name セットする name
 	 */
 	public void setName(String name) {
-		this.name = name;
+		// 名前が空文字なら、名無しさんにする
+		if(name.equals("")){
+			this.name = "名無し";
+		}else{
+			this.name = name;
+		}
 	}
 
 	/**

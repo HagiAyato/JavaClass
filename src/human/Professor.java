@@ -5,38 +5,36 @@ package human;
 
 /**
  * 要素2：継承
- * 人クラスを"継承"した学生クラス
+ * 人クラスを"継承"した教授クラス
  * 継承すれば、人クラスの機能をそのまま使用できる。
  * @author hagirainbow
  *
  */
-public class Student extends Human {
+public class Professor extends Human {
 
-	// サブクラス独自のメンバ
-	private String favoriteSubject = "なし";
+	private String field = "秘密";
 
 	/**
-	 * 初期設定
 	 * @param height
 	 * @param weight
 	 * @param name
-	 * @param favoriteSubject
+	 * @param field
 	 */
-	public Student(double height, double weight, String name, String favoriteSubject) {
+	public Professor(double height, double weight, String name, String field) {
 		super(height, weight, name);
 		// TODO 自動生成されたコンストラクター・スタブ
-		this.favoriteSubject = favoriteSubject;
+		this.field = field;
 	}
 
 	/* (非 Javadoc)
 	 * @see human.Human#Introduce()
-	 * 学生の自己紹介
+	 * 教授の自己紹介
 	 */
 	@Override
 	public void Introduce() {
 		// TODO 自動生成されたメソッド・スタブ
 		System.out.println("身長：" + getHeight() + "cm 体重：" + getWeight() + "kg 氏名：" + getName());
-		System.out.println("得意科目" + this.favoriteSubject);
+		System.out.println("研究分野：" + this.field);
 	}
 
 }
